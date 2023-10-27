@@ -10,11 +10,15 @@ interface TipoNomeCompleto {
   nomeCompleto(): string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type TipoPessoa = TipoNome & TipoSobrenome & TipoNomeCompleto;
 interface TipoPessoa2 extends TipoNome, TipoSobrenome, TipoNomeCompleto {}
 
 export class Pessoa implements TipoPessoa2 {
-  constructor(public nome: string, public sobrenome: string) {}
+  constructor(
+    public nome: string,
+    public sobrenome: string,
+  ) {}
 
   nomeCompleto(): string {
     return this.nome + ' ' + this.sobrenome;
